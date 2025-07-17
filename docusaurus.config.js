@@ -7,15 +7,15 @@ const code_themes = {
 
 /** @type {import('@docusaurus/types').Config} */
 const meta = {
-  title: 'Dyte Docs',
+  title: 'Thinking Engine',
   tagline:
-    'Explore comprehensive documentation for Dyte, including guides, references, and best practices.',
-  url: 'https://docs.dyte.io',
+    '가이드, 참고 문헌, 모범 사례 등 Thinking Engine에 대한 포괄적인 문서를 살펴보세요.',
+  url: 'https://wo123kr.github.io/docs/',
   baseUrl: '/',
-  favicon: '/favicon.ico',
+  favicon: '/favicon.ico', // 파비콘 경로
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'ko', 
+    locales: ['ko'],
   },
 };
 
@@ -223,6 +223,18 @@ const plugins = [
   tailwindPlugin,
   ...docs_plugins,
   webpackPlugin,
+    [
+    '@easyops-cn/docusaurus-search-local',
+    {
+      hashed: true,
+      indexDocs: true,
+      indexBlog: false,
+      indexPages: true,
+      language: ['ko'],
+      highlightSearchTermsOnTargetPage: true,
+      explicitSearchResultPath: true,
+    },
+  ],
   [
     '@docusaurus/plugin-client-redirects',
     {
@@ -657,13 +669,6 @@ const config = {
             line: 'highlight-next-line-error',
           },
         ],
-      },
-      algolia: {
-        appId: 'HL0HSV62RK',
-        apiKey: '72ebf02146698733b7114c7b36da0945',
-        indexName: 'docs',
-        contextualSearch: true,
-        searchParameters: {},
       },
     }),
 
