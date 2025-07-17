@@ -10,8 +10,8 @@ const meta = {
   title: 'Thinking Engine',
   tagline:
     '가이드, 참고 문헌, 모범 사례 등 Thinking Engine에 대한 포괄적인 문서를 살펴보세요.',
-  url: 'https://wo123kr.github.io/docs/',
-  baseUrl: '/',
+  url: 'https://wo123kr.github.io',
+  baseUrl: '/td-docs/', // 사이트의 기본 URL
   favicon: '/favicon.ico', // 파비콘 경로
   i18n: {
     defaultLocale: 'ko', 
@@ -187,7 +187,7 @@ const docs = [
 /** @type {import('@docusaurus/plugin-content-docs').Options} */
 const defaultSettings = {
   breadcrumbs: true,
-  editUrl: 'https://github.com/dyte-io/docs/tree/main/',
+  editUrl: 'https://github.com/wo123kr/td-docs/tree/main/',
   showLastUpdateTime: true,
   sidebarCollapsible: true,
   remarkPlugins: [
@@ -464,8 +464,14 @@ const config = {
     experimental_faster: true,
   },
 
+  // 아래 GitHub Pages 배포 설정 추가
+  organizationName: 'wo123kr', // GitHub 사용자명
+  projectName: 'td-docs',      // GitHub 저장소 이름
+  deploymentBranch: 'gh-pages', // 배포될 브랜치
+  
   trailingSlash: false,
   themes: ['@docusaurus/theme-live-codeblock', '@docusaurus/theme-mermaid'],
+
   clientModules: [
     require.resolve('./src/client/define-ui-kit.js'),
     require.resolve('./src/client/set-framework.js'),
